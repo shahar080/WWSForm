@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import com.sa.Information.AboutWindow;
-
+import com.sa.Information.InstructionsWindow;
 
 
 /**
@@ -39,9 +39,6 @@ public class mainFrame extends JFrame implements ActionListener
         _file = new JMenu("קובץ");
         _options = new JMenu("אפשרויות");
         /////
-        _op1 = new JMenuItem("אפשרות 1");//first option - //todo
-        _file.add(_op1);
-        _op1.addActionListener(this);
 
         _about = new JMenuItem("אודות");//about option
         _file.add(_about);
@@ -86,12 +83,22 @@ public class mainFrame extends JFrame implements ActionListener
             }
 
             if (e.getActionCommand().equalsIgnoreCase("יציאה")) {
-                System.exit(0);
+                String[] options = new String[] {"ביטול", "כן"};
+                int dialogResult = JOptionPane.showOptionDialog(null,
+                        "האם אתה בטוח שברצונך לצאת?", "אזהרה",
+                        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
+                        null, options, options[0]);
+
+                if(dialogResult == 1) {
+                    System.exit(0);
+                }
+                else
+                    System.out.println("####Exit program canceled");
             }
 
             if (e.getActionCommand().equalsIgnoreCase("הוראות"))
             {
-                //todo
+                InstructionsWindow iw = new InstructionsWindow();
             }
 
         }

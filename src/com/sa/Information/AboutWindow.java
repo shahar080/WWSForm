@@ -28,7 +28,7 @@ public class AboutWindow extends JFrame
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setSize(_sizeOfScreenX,_sizeOfScreenY);
 		setLayout(null);
-		JLabel background=new JLabel(new ImageIcon("src/com/sa/Images/instructions.png"));//todo instructions page
+		JLabel background=new JLabel(new ImageIcon("src/com/sa/Images/about.png"));//todo about page
 		background.setSize(_sizeOfScreenX, _sizeOfScreenY);
 		add(background);
 		setVisible(true);
